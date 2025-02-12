@@ -1,0 +1,19 @@
+<?php
+/**
+ * Нижний колонтитул формы восстановления.
+ * 
+ * Этот файл является частью модуля "Восстановление доступу к Панели управления".
+ * 
+ * @copyright Copyright (c) 2015 Веб-студия GearMagic
+ * @license https://gearmagic.ru/license/
+ */
+
+$version = Gm::$app->version;
+$edition = $version->getEdition();
+?>
+<div class="g-form__footer">
+    <div class="g-form__footer-wrap">
+        <span class="copyright">© <?= $edition->getDate('Y') ?>, <a target="_blank" href="https://gearmagic.ru/">GearMagic</a></span>, 
+        <span class="version"> <a target="_blank" href="<?= $edition->resource ?>"><?= $version->getEdition()->getReleaseName(Gm::$app->language->isRu()) ?></a></span>
+    </div>
+</div>

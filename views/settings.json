@@ -1,0 +1,67 @@
+[
+    {
+        "xtype": "container",
+        "layout": "anchor",
+        "padding": 5,
+        "defaults": {
+            "labelWidth": 210,
+            "labelAlign": "right"
+        },
+        "items": [
+            {
+                "xtype": "textfield",
+                "fieldLabel": "E-mail получателя уведомлений",
+                "tooltip": "E-mail адреса (разделитель \",\") на которые приходят уведомления о ходе авторизации пользователей",
+                "name": "mail",
+                "anchor" : "100%",
+                "allowBlank": true
+            },
+            {
+                "xtype": "fieldset",
+                "title": "Шаблон письма",
+                "defaults": {
+                    "labelWidth": 200,
+                    "labelAlign": "right",
+                    "anchor": "100%"
+                },
+                "items": ["@templateMail", "@templateUserMail"]
+            },
+            {
+                "xtype": "label",
+                "ui": "fieldset-comment",
+                "html": "Если шаблон письма не указан, письмо не будет отправлено"
+            },
+            {
+                "xtype": "fieldset",
+                "title": "Отправить письмо на e-mail",
+                "defaults": {
+                    "xtype": "checkbox",
+                    "labelWidth": 197,
+                    "labelAlign": "right"
+                },
+                "items": [
+                    {
+                        "ui": "switch",
+                        "checked": true,
+                        "fieldLabel": "получателю уведомлений",
+                        "name": "sendMail"
+                    }
+                ]
+            },
+            {
+                "xtype": "checkbox",
+                "ui": "switch",
+                "fieldLabel": "задействовать капчу",
+                "name": "captcha",
+                "checked": true
+            },
+            {
+                "xtype": "checkbox",
+                "ui": "switch",
+                "fieldLabel": "запись действий в журнал аудита",
+                "name": "auditWrite",
+                "checked": true
+            }
+        ]
+    }
+]

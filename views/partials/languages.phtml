@@ -1,0 +1,36 @@
+<?php
+/**
+ * Выбор языка.
+ * 
+ * Этот файл является частью модуля "Восстановление доступу к Панели управления".
+ * 
+ * @copyright Copyright (c) 2015 Веб-студия GearMagic
+ * @license https://gearmagic.ru/license/
+ * 
+ * @var string $language
+ * @var string $defLanguage
+ * @var array $languages
+ */
+
+use Gm\Helper\Url;
+use Gm\Helper\Html;
+
+$language    = Gm::$app->language->tag;
+$defLanguage = Gm::$app->language->default;
+$languages   = Gm::$app->language->available->forBackend(true);
+
+if (sizeof($languages) > 1) :
+?>
+<div class="g-container__langs">
+    <ul>
+<?php foreach ($languages as $value) : $isLocale = $value['tag'] == $language; ?>
+        <li><?= Html::a($value['shortName'], null, [
+                        'href'  => Url::toBackend(['recovery', 'langSlug' => $value['slug']]),
+                        'class' => $isLocale ? 'active' : '',
+                        'lang'  => $value['slug'],
+                        'title' => $value['name']
+        ]) ?></li>
+<?php endforeach ?>
+    </ul>
+</div>
+<?php endif ?>

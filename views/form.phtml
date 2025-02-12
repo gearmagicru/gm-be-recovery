@@ -1,0 +1,103 @@
+<?php
+/**
+ * Форма восстановления.
+ * 
+ * Этот файл является частью модуля "Восстановление доступу к Панели управления".
+ * 
+ * @copyright Copyright (c) 2015 Веб-студия GearMagic
+ * @license https://gearmagic.ru/license/
+ * 
+ * @var \Gm\View\View $this
+ * @var string $formTitle
+ * @var string $formUrl
+ * @var callable $translate
+ * @var \Gm\Config\Config $settings
+ */
+
+use Gm\Helper\Url;
+use Gm\Helper\Html;
+?>
+<div class="g-form wow flipInY animated">
+    <div class="g-form__wrapper">
+        <a class="g-form__button button_back" href="<?= Url::toBackend('') ?>" title="<?= $translate('Signin page') ?>"></a>
+        <div class="g-form__subtitle"><?= $formTitle ?></div>
+        <div class="g-form__header"><?= $translate('Title recovery account') ?></div>
+        <form method="post" action="<?= $formUrl ?>" onsubmit="return false" id="recovery-form">
+            <?= Html::csrfInput() ?>
+
+            <div id="g-notify" class="g-notify">
+                <div class="g-notify__notice">
+                    <span class="g-notify__icon"></span>
+                    <div></div>
+                </div>
+            </div>
+            <fieldset>
+                <label class="g-label">
+                    <?= Html::textInput('email', null, [
+                            'id'            => 'email',
+                            'class'         => 'input input_mail',
+                            'tabindex'      => 1,
+                            'placeholder'   => 'E-mail',
+                            'data-validate' => 'true',
+                            'data-mask'     => '^\w+([\.-]?\w+)*@(((([a-z0-9]{2,})|([a-z0-9][-][a-z0-9]+))[\.][a-z0-9])|([a-z0-9]+[-]?))+[a-z0-9]+\.([a-z]{2}|(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))',
+                            'data-title'    => 'E-mail'
+                        ]) ?>
+                    <span class="g-label__holder">E-mail</span>
+                </label>
+            </fieldset>
+<?php if ($settings && $settings->captcha): ?>
+            <fieldset>
+                <label class="g-label">
+                    <?= Html::textInput('captcha', null, [
+                            'id'            => 'captcha',
+                            'class'         => 'input input_captcha',
+                            'tabindex'      => 2,
+                            'placeholder'   => $translate('Code'),
+                            'data-validate' => 'true',
+                            'data-title'    => $translate('Code')
+                        ]) ?>
+                    <span class="g-label__holder"><?= $translate('Code') ?></span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label class="g-label label_auto">
+                    <div class="g-captcha">
+                        <img src="recovery/captcha" id="icaptcha" />
+                        <?= Html::a('', null, [
+                            'href' => '',
+                            'class' => 'g-form__button button_refresh',
+                            'title' => $translate('Refresh code')
+                        ]) ?>
+                    </div>
+                </label>
+            </fieldset>
+<?php endif ?>
+            <fieldset>
+            <?= Html::a($translate('Recovery'), '#', [
+                'id'    => 'submit',
+                'class' => 'g-form__button button_long button_recovery',
+                'title' => $translate('Recovery')
+            ]) ?>
+            </fieldset>
+        </form>
+    </div>
+    <?= $this->render('/partials/form-footer') ?>
+</div>
+<?= $this->render('/partials/languages') ?>
+<script>
+Ext.onReady(function(){
+    new Gm.singleton.form.Form({
+        id: 'recovery-form',
+        initConfig: {
+            validator: {
+                msgEmpty: '<?= $translate('You did not fill in the field {0}') ?> ',
+                msgMinLength: '<?= $translate('The value of the field {0} must be greater than {1} characters') ?>',
+                msgMaxLength: '<?= $translate('The value of the field {0} must be less than {1} characters') ?>',
+                msgRange: '<?= $translate('The length of the field value {0} must be between {1} and {2} characters') ?>',
+                msgMask: '<?= $translate('The value of the field {0} contains invalid characters') ?>',
+            }
+        },
+        focus: function() { Ext.get('email').focus(); }
+    });
+});
+</script>

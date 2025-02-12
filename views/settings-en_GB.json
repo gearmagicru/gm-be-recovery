@@ -1,0 +1,67 @@
+[
+    {
+        "xtype": "container",
+        "layout": "anchor",
+        "padding": 5,
+        "defaults": {
+            "labelWidth": 210,
+            "labelAlign": "right"
+        },
+        "items": [
+            {
+                "xtype": "textfield",
+                "fieldLabel": "Notification recipient's email",
+                "tooltip": "E-mail addresses (delimiter \",\") to which notifications about the progress of user authorization are sent",
+                "name": "mail",
+                "anchor" : "100%",
+                "allowBlank": true
+            },
+            {
+                "xtype": "fieldset",
+                "title": "Mail template",
+                "defaults": {
+                    "labelWidth": 200,
+                    "labelAlign": "right",
+                    "anchor": "100%"
+                },
+                "items": ["@templateMail", "@templateUserMail"]
+            },
+            {
+                "xtype": "label",
+                "ui": "fieldset-comment",
+                "html": "If the email template is not specified, the email will not be sent."
+            },
+            {
+                "xtype": "fieldset",
+                "title": "Send an email",
+                "defaults": {
+                    "xtype": "checkbox",
+                    "labelWidth": 197,
+                    "labelAlign": "right"
+                },
+                "items": [
+                    {
+                        "ui": "switch",
+                        "checked": true,
+                        "fieldLabel": "notification recipient",
+                        "name": "sendMail"
+                    }
+                ]
+            },
+            {
+                "xtype": "checkbox",
+                "ui": "switch",
+                "fieldLabel": "enable captcha",
+                "name": "captcha",
+                "checked": true
+            },
+            {
+                "xtype": "checkbox",
+                "ui": "switch",
+                "fieldLabel": "recording actions in the audit log",
+                "name": "auditWrite",
+                "checked": true
+            }
+        ]
+    }
+]

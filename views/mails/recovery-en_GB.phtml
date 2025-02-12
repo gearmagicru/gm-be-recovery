@@ -1,0 +1,379 @@
+<?php
+use Gm\Helper\Url;
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      .ReadMsgBody {
+          width: 100%;
+          background-color: #ffffff;
+      }
+      .ExternalClass {
+          width: 100%;
+          background-color: #ffffff;
+      }
+      body {
+          width: 100%;
+          background-color: #f2f4f5;
+          margin: 0;
+          padding: 0;
+          -webkit-text-size-adjust: none !important;
+      }
+      table {
+          border-collapse: separate;
+      }
+      body,
+      table {
+        font-family: 'Roboto', Roboto, Arial, Helvetica, sans-serif;
+        font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* МОБИЛЬНЫЕ СТИЛИ */
+      @media screen and (max-width: 525px) {
+        /* ПОЗВОЛЯЕТ ТАБЛИЦАМ ПЛАВАТЬ */
+        .wrapper {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        /* РЕГУЛИРУЕТ МАКЕТ ИЗОБРАЖЕНИЯ ЛОГОТИПА */
+        .logo img {
+          margin: 0 auto !important;
+        }
+        /* ИСПОЛЬЗУЙТЕ ЭТИ КЛАССЫ, ЧТОБЫ СКРЫТЬ КОНТЕНТ НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
+        .mobile-hide {
+          display: none !important;
+        }
+        .img-max {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+        /* ПОЛНАЯ ШИРИНА ТАБЛИЦ */
+        .responsive-table {
+          width: 100% !important;
+        }
+        /* ПОЛЕЗНЫЕ КЛАССЫ ДЛЯ РЕГУЛИРОВКИ PADDING НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
+        .padding {
+          padding: 0px 5% 0px 5% !important;
+        }
+        .padding-meta {
+          padding: 30px 5% 0px 5% !important;
+          text-align: center;
+        }
+        .no-padding {
+          padding: 0 !important;
+        }
+        .section-padding {
+          padding: 0px 15px 0px 15px !important;
+        }
+        /* НАСТРОЙКА КНОПОК НА МОБИЛЬНОМ УСТРОЙСТВЕ */
+        .mobile-button-container {
+          margin: 0 auto;
+          width: 100% !important;
+        }
+        .mobile-button {
+          padding: 15px !important;
+          border: 0 !important;
+          font-size: 16px !important;
+          display: block !important;
+        }
+      }
+      table,
+      td,
+      b,
+      a,
+      strong,
+      p,
+      div {
+          font-family: 'Helvetica Neue', Arial, 'sans-serif';
+      }
+      td.content {
+          font: 16px/22px 'Helvetica Neue', Arial, 'sans-serif';
+          text-align: left;
+          padding: 50px 40px 0px 40px;
+          color: #555555;
+      }
+      a {
+          color: #207245;
+          text-decoration: none;
+      }
+      /* ИСПРАВЛЕНИЕ ЦЕНТРА ДЛЯ ANDROID */
+      div[style*="margin: 16px 0;"] {
+          margin: 0 !important;
+      }
+      a.fiverr-social-icon {
+          display: inline-block;
+          margin: 2px 5px;
+      }
+    </style>
+</head>
+
+<body style="margin: 0 !important; padding: 0 !important;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!-- РАЗДЕЛИТЕЛЬ -->
+        <tr>
+            <td width="100%" align="center" valign="top" bgcolor="#f2f4f5" height="20"></td>
+        </tr>
+          <tr>
+              <td bgcolor="#f2f4f5" align="center" style="padding: 0px 15px 0px 15px;" class="section-padding">
+                  <!--[if (gte mso 9)|(IE)]>
+                  <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                      <tr>
+                          <td align="center" valign="top" width="600">
+                  <![endif]-->
+                  <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="responsive-table">
+                      <tr>
+                          <td>
+                              <!-- ЗАГОЛОВОК И ЛОГО -->
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                      <td align="center" style="padding: 40px 40px 0px 40px;">
+                                          <a href="<?= Url::home() ?>" target="_blank">
+                                            <img src="<?= Gm::alias('@/theme', '/widgets/images/email/logo.svg') ?>" width="100px" border="0" style="vertical-align: middle;">
+                                          </a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td align="center" style="font-size: 24px; color: #333; line-height: 28px; vertical-align: top; text-align:center; padding: 35px 40px 0px 40px;">User<br> is trying to recover his account</td>
+                                  </tr>
+                                  <!-- ГРАНИЦА -->
+                                  <tr>
+                                      <td align="center" bgcolor="#ffffff" height="1" style="padding:40px 40px 5px;" valign="top" width="100%">
+                                          <table cellpadding="0" cellspacing="0" width="100%">
+                                              <tbody>
+                                                  <tr><td style="border-top:1px solid #e4e4e4;"></td></tr>
+                                              </tbody>
+                                          </table>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td class="content" style="font-size: 16px/22px;text-align: left;color: #406367;padding: 40px 40px 0px 40px;">
+                                          <span style="padding-bottom: 10px; font-size: 16px; line-height: 24px;">
+                                              <p>We noticed that the user <strong><?= $user->username ?></strong> is trying to recover his account from the device:</p>
+
+                                              <!-- АВТОРИЗАЦИЯ НА УСТРОЙСТВЕ -->
+                                              <p style="font-weight: 500">
+                                                  <span style="color: #95979D; font-size: 14px;">Device</span><br>
+                                                  <span style="color: #406367">
+<?php if ($row = $device->define(true, true)): 
+    if (empty($row[1]) && empty($row[2])):
+        echo '<неизвестно>';
+    else:
+        echo $row[1] ?: '', $row[2] ? ($row[1] ? ', ' : '') . $row[2] : '';
+    endif;
+endif; ?>
+                                                  </span>
+                                              </p>
+                                              <p style="font-weight: 500">
+                                                  <span style="color: #95979D; font-size: 14px">Approximate location</span><br>
+                                                  <span style="color: #406367"><?= $row && $row[0] ? $row[0] . ', <location unknown>' : '<unknown>' ?></span>
+                                              </p>
+                                              <p style="font-weight: 500">
+                                                  <span style="color: #95979D; font-size: 14px">Date and time</span><br>
+                                                  <span style="color: #406367"><?= $date ?></span>
+                                              </p>
+                                              <p>To recovery the user account <strong><?= $user->username ?></strong>, follow the link: «<a href="<?= $recoveryUrl ?>"><strong>resset password</strong></a>» and enter the new password below.</p>
+                                              <p style="padding: 22px; font-size: 30px; text-align: center; border: 1px solid #E4E5E7; border-radius: 3px; background-color: #F5F5F5;letter-spacing: 7px;color: #444;"><?= $password ?></p>
+                                              <p style="font-weight: 500">
+                                                  <span style="color: #95979D; font-size: 14px;">as well as e-mail:</span>
+                                              </p>
+                                              <p style="padding: 22px; font-size: 20px; text-align: center; border: 1px solid #E4E5E7; border-radius: 3px; background-color: #F5F5F5;letter-spacing: 3px;color: #444;"><?= $email ?></p>
+
+<?php if ($profile): ?>
+                                              <!-- ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ -->
+                                              <p>User information:</p>
+                                              <table border="0" cellpadding="0" cellspacing="0" style="font-size: 14px; line-height: 22px; color: #62646A; font-weight: 500; border: 1px solid #E4E5E7; border-radius: 3px; background-color: #F5F5F5; width: 100%">
+                                                    <tr>
+                                                        <td colspan="3" height="24"> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="24"> </td>
+                                                        <td align="left">
+                                                            <p style="font-weight: 500">
+                                                                <span style="color: #95979D; font-size: 14px">user ID: </span> 
+                                                                <span style="color: #222325"><?= $user->id ?></span>
+                                                            </p>
+                                                            <p style="font-weight: 500">
+                                                                <span style="color: #95979D; font-size: 14px">Account: </span> 
+                                                                <span style="color: #222325"><?= $user->username ?></span>
+                                                            </p>
+<?php if ($profile->name): ?>
+                                                            <p style="font-weight: 500">
+                                                                <span style="color: #95979D; font-size: 14px">Name: </span> 
+                                                                <span style="color: #222325"><?= $profile->name ?></span>
+                                                            </p>   
+<?php endif ?>
+<?php if ($profile->email): ?>
+                                                            <p style="font-weight: 500">
+                                                                <span style="color: #95979D; font-size: 14px">E-mail: </span> 
+                                                                <span style="color: #222325"><?= $profile->email ?></span>
+                                                            </p>   
+<?php endif ?>
+<?php if ($profile->phone): ?>
+                                                            <p style="font-weight: 500">
+                                                                <span style="color: #95979D; font-size: 14px">Phone: </span> 
+                                                                <span style="color: #222325"><?= $profile->phone ?></span>
+                                                            </p>   
+<?php endif ?>
+                                                        </td>
+                                                        <td width="24"> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="3" height="24"> </td>
+                                                    </tr>
+                                                </table>
+<?php endif ?>
+
+                                              <!-- ИНФОРМАЦИЯ О СИСТЕМЕ -->
+                                              <p>System information:</p>
+                                                <table border="0" cellpadding="0" cellspacing="0" style="font-size: 14px; line-height: 22px; color: #62646A; font-weight: 500; border: 1px solid #E4E5E7; border-radius: 3px; background-color: #F5F5F5; width: 100%">
+                                                    <tr>
+                                                        <td colspan="3" height="24"> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="24"> </td>
+                                                        <td align="left">
+                                                            <p style="font-weight: 500">
+                                                                <span style="color: #406367; font-size: 14px">Platform «<?= $version->name ?>»</span>
+                                                                <ul style="color: #222325;padding: 0 0 0 16px;margin:0">
+                                                                    <li><span style="color: #95979D;">version:</span>  <?= ($version->number ?: '<unknown>') ?></li>
+                                                                    <li><span style="color: #95979D;">release date:</span>  <?= ($version->date ?: '<unknown>') ?></li>
+                                                                </ul>
+                                                            </p>
+                                                            <p style="font-weight: 500"></p>
+                                                                <span style="color: #406367; font-size: 14px">Edition «<?= $editionVersion->name ?>»</span>
+                                                                <ul style="color: #222325;padding: 0 0 0 16px;margin:0">
+                                                                    <li><span style="color: #95979D;">version:</span>  <?= ($editionVersion->number ?: '<unknown>') ?></li>
+                                                                    <li><span style="color: #95979D;">release date:</span>  <?= ($editionVersion->date ?: '<unknown>') ?></li>
+                                                                </ul>
+                                                            </p>
+                                                            <p style="font-weight: 500"></p>
+                                                                <span style="color: #406367; font-size: 14px">Control panel «<?= $panelVersion->name ?>»</span>
+                                                                <ul style="color: #222325;padding: 0 0 0 16px;margin:0">
+                                                                    <li><span style="color: #95979D;">version:</span>  <?= ($panelVersion->number ?: '<unknown>') ?></li>
+                                                                    <li><span style="color: #95979D;">release date:</span>  <?= ($panelVersion->date ?: '<unknown>') ?></li>
+                                                                </ul>
+                                                            </p>
+                                                        </td>
+                                                        <td width="24"> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="3" height="24"> </td>
+                                                    </tr>
+                                                </table>
+
+                                              <!-- КОММЕНТАРИЙ -->
+                                              <table border="0">
+                                                  <tr>
+                                                      <td style="background:none; height:20px;"> </td>
+                                                  </tr>
+                                              </table>
+                                              <table border="0" cellpadding="0" cellspacing="0" style="font-size: 14px; line-height: 22px; color: #856404; font-weight: 500; border: 1px solid #ffeeba; border-radius: 3px; background-color: #fff3cd;">
+                                                  <tr>
+                                                      <td colspan="3" height="24"> </td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td width="24"> </td>
+                                                      <td align="left">
+                                                          <p>To disable notifications, change the module settings «Account recovery».</p>
+                                                      </td>
+                                                      <td width="24"> </td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td colspan="3" height="24"> </td>
+                                                  </tr>
+                                              </table>
+                                              <table border="0">
+                                                  <tr>
+                                                      <td style="background:none; height:20px;"> </td>
+                                                  </tr>
+                                              </table>
+                                              <p>Sincerely,<br><b><?= $version->name ?></b></p>
+                                          </span>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </td>
+                      </tr>
+                      <!-- РАЗДЕЛИТЕЛЬ -->
+                      <tr>
+                          <td width="100%" align="center" valign="top" bgcolor="#ffffff" height="45"></td>
+                      </tr>
+                  </table>
+                  <!--[if (gte mso 9)|(IE)]>
+                          </td>
+                      </tr>
+                  </table>
+                  <![endif]-->
+              </td>
+          </tr>
+          <tr>
+              <td bgcolor="#f2f4f5" align="center" style="padding: 20px 0px;">
+                  <!--[if (gte mso 9)|(IE)]>
+                  <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                      <tr>
+                          <td align="center" valign="top" width="500">
+                  <![endif]-->
+                  <!-- СОЦСЕТИ -->
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 600px;" class="responsive-table">
+                      <tr> </tr>
+                      <tr>
+                          <td bgcolor="#f2f4f5" align="center">
+                              <!--[if (gte mso 9)|(IE)]>
+                              <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                                  <tr>
+                                    <td align="center" valign="top" width="500">
+                              <![endif]-->
+                              <!-- СОЦСЕТИ -->
+                              <?php //  Url::brandName() заменить на название своей компании ?>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 600px;" class="responsive-table">
+                                  <tr>
+                                      <td align="center" class="center" style="text-align: center; padding:10px 10px 10px 10px;">
+                                          <!--Twitter-->
+                                          <a href="https://twitter.com/<?= Url::brandName() ?>" style="display: inline-block; margin: 2px">
+                                              <img height="40" src="<?= Gm::alias('@/theme', '/widgets/images/email/twitter.png') ?>" width="40">
+                                          </a>
+                                          <!--Facebook-->
+                                          <a href="https://www.facebook.com/<?= Url::brandName() ?>" style="display: inline-block; margin: 2px">
+                                              <img height="40" src="<?= Gm::alias('@/theme', '/widgets/images/email/facebook.png') ?>" width="40">
+                                          </a>
+                                          <!--LinkedIn-->
+                                          <a href="https://www.linkedin.com/company/<?= Url::brandName() ?>" style="display: inline-block; margin: 2px">
+                                              <img height="40" src="<?= Gm::alias('@/theme', '/widgets/images/email/linkedin.png') ?>" width="40">
+                                          </a>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td style="color: #999999 ;font-size: 12px;line-height: 16px;text-align: center;">
+                                      This email was sent as a notification, <br>since you are using <?= $version->name ?>.
+                                      <span>
+                                          Authorization page <a target="_blank" href="<?= Url::toBackend() ?>"><?= Url::toBackend() ?></a>.
+                                          <br>
+                                          <a style="font-size: 14px;line-height: 25px;" target="_blank" href="<?= Url::home() ?>"><?= $editionVersion->getReleaseName(true) ?></a>
+                                        </span>
+                                      </td>
+                                  </tr>
+                              </table>
+                              <!--[if (gte mso 9)|(IE)]>
+                                      </td>
+                                  </tr>
+                              </table>
+                              <![endif]-->
+                          </td>
+                      </tr>
+                  </table>
+                  <!--[if (gte mso 9)|(IE)]>
+                          </td>
+                      </tr>
+                  </table>
+                  <![endif]-->
+              </td>
+          </tr>
+    </table>
+</body>
+
+</html>
