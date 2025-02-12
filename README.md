@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/gearmagicru/gm-be-recovery/refs/heads/master/assets/images/icon.svg" width="64px" height="64px" align="absmiddle"> About Модуль панели управления "Восстановление учетной записи (аккаунта)"
+# <img src="https://raw.githubusercontent.com/gearmagicru/gm-be-recovery/refs/heads/master/assets/images/icon.svg" width="64px" height="64px" align="absmiddle"> Модуль панели управления "Восстановление учетной записи (аккаунта)"
 
 Модуль предназначен для восстановления учетной записи (аккаунта) к Панели управления GM Panel.
 
