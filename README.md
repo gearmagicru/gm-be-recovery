@@ -8,7 +8,7 @@
 [![Source Code](https://img.shields.io/badge/source-gearmagicru/gm--be--recovery-blue.svg)](https://github.com/gearmagicru/gm-be-recovery)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/gearmagicru/gm-be-recovery/blob/master/LICENSE)
 ![Component type: module](https://img.shields.io/badge/component%20type-module-green.svg)
-![Component ID: gm-be-recovery](https://img.shields.io/badge/component%20id-gm-be-recovery-green.svg)
+![Component ID: gm-be-recovery](https://img.shields.io/badge/component%20id-gm.be.recovery-green.svg)
 ![php 8.2+](https://img.shields.io/badge/php-min%208.2-red.svg)
 
 ## Установка
