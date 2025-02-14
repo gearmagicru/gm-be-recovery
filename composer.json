@@ -1,13 +1,7 @@
 {
     "name": "gearmagicru/gm-be-recovery",
-    "description": "Control panel module \"Account recovery\"",
-    "keywords": [
-        "gm",
-        "gearmagic",
-        "GM Panel",
-        "module",
-        "recovery"
-    ],
+    "description": "Control Panel module \"Account recovery\"",
+    "keywords": ["gearmagic", "gm-panel", "gm-component", "gm-module", "module"],
     "homepage": "https://apps.gearmagic.ru/component/gm-be-recovery",
     "type": "component",
     "license": "MIT",
